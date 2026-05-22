@@ -14,6 +14,7 @@ Registrar los cambios relevantes del proyecto Stylos OS. No es un log de commits
 - Pendientes de relevamiento ampliados (`pendientes-sheets.md`): se reorganizaron en secciones por hoja y tipo de duda. Se agregaron ítems específicos derivados del análisis de CSV.
 - Plan de validaciones futuras (`plan-validaciones-sheets.md`): 31 validaciones definidas (10 para Caja_diaria, 12 para Egresos, 11 para Comisiones) más 5 validaciones cruzadas propuestas en estado "pendiente de confirmación". Tablas con ID, tipo, severidad y estado por validación. Priorización en 4 niveles (P1 a P4). Lista de confirmaciones previas a cualquier script.
 - Corrección de caracteres residuales en `auditoria-hojas-principales.md` (texto en chino incorrectamente incluido).
+- Estado actual del proyecto (`estado-actual.md`): resumen de cierre del Sprint 2 con estado de archivos, decisiones, pendientes y advertencias para la próxima sesión.
 
 ### Pendiente
 
