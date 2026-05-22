@@ -26,7 +26,9 @@ Documentación generada durante el Sprint 2:
 |-----------|-----------|
 | `estructura-sheets.md` | Mapeo de archivos, hojas, relaciones y clasificación (datos crudos vs. análisis) |
 | `diccionario-datos.md` | Campos por hoja con tipo, obligatoriedad, descripción y validaciones sugeridas |
+| `auditoria-hojas-principales.md` | Auditoría preliminar basada en CSV de muestra: anomalías detectadas, riesgos y dudas pendientes |
 | `pendientes-sheets.md` | Checklist de información que falta relevar contra las planillas reales |
+| `plan-validaciones-sheets.md` | Plan de validaciones futuras para Caja_diaria, Egresos y Comisiones, con priorización y dependencias |
 
 Estos documentos se completan a medida que se relevan las planillas. Los campos y hojas no verificados están marcados como `PENDIENTE` o `TODO`.
 

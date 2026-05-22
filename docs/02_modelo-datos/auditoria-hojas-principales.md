@@ -119,7 +119,7 @@ Registra los gastos del local desglosados por categoría, subcategoría, medio d
 ### 6. Riesgos de carga manual
 
 - **Riesgo alto**: Si PersonaID es required pero se deja vacío frecuentemente, los reportes de gastos por persona estarán incompletos.
-- **Riesgo medio**: Detalle自由的自由文本可能导致描述不一致（例如 "Alq" vs "Alquiler" vs 空），使后续分析变得困难。
+- **Riesgo medio**: El texto libre en Detalle puede generar inconsistencias de descripción ("Alq" vs "Alquiler" vs vacío), dificultando análisis posteriores. Esto es un riesgo de carga manual, no un error necesariamente.
 - **Riesgo medio**: Cambio de EgresoID sin migración puede afectar fórmulas que referencian IDs antiguos.
 
 ### 7. Dudas pendientes
@@ -186,7 +186,7 @@ Registra comisiones de los barbijos por servicio realizado, con desglose de vent
 
 ### 8. Prioridad de mejora
 
-**Media** — La falta de ComisionID y PersonaID en muchos registros es una сигнал de alerta. La relación entre Servicios=0 y PersonaID=7 requiere verificación urgente para entender si esas comisiones son válidas.
+**Media** — La falta de ComisionID y PersonaID en muchos registros es una señal de alerta. La relación entre Servicios=0 y PersonaID=7 requiere verificación urgente para entender si esas comisiones son válidas.
 
 ---
 
