@@ -20,9 +20,19 @@ Documentar cómo se estructuran los datos actuales del negocio, dónde viven, qu
 
 ## Hojas de Google Sheets
 
-PENDIENTE: Documentar cada hoja con su nombre, propósito, columnas principales y frecuencia de actualización.
+Documentación generada durante el Sprint 2:
 
-### Ejemplo de documentación por hoja
+| Documento | Propósito |
+|-----------|-----------|
+| `estructura-sheets.md` | Mapeo de archivos, hojas, relaciones y clasificación (datos crudos vs. análisis) |
+| `diccionario-datos.md` | Campos por hoja con tipo, obligatoriedad, descripción y validaciones sugeridas |
+| `pendientes-sheets.md` | Checklist de información que falta relevar contra las planillas reales |
+
+Estos documentos se completan a medida que se relevan las planillas. Los campos y hojas no verificados están marcados como `PENDIENTE` o `TODO`.
+
+La decisión de documentar antes de modificar está registrada en `docs/tecnico/decisiones-tecnicas/0003-documentar-sheets-antes-de-modificar.md`.
+
+### Formato de documentación por hoja (referencia)
 
 ```
 Nombre: [nombre de la hoja]
@@ -37,8 +47,17 @@ Responsable: [quién carga los datos]
 
 ## Glosario de datos
 
-PENDIENTE: Definir términos clave usados en los datos del negocio (ej: "cierre diario", "resultado operativo", "margen").
+Ver `diccionario-datos.md` para la definición de cada campo del negocio.
+
+Términos generales del glosario (PENDIENTE: completar):
+
+- **Cierre diario**: registro de ingresos y egresos de una jornada laboral
+- **Resultado operativo**: diferencia entre ingresos y egresos operativos en un período
+- **Margen**: porcentaje del resultado operativo sobre los ingresos totales
+- **Cuota parte**: distribución de ingresos entre los miembros del equipo según porcentaje acordado
 
 ## Relaciones entre datos
 
-PENDIENTE: Documentar cómo se conectan las distintas fuentes y hojas entre sí.
+Ver `estructura-sheets.md` para el mapeo de dependencias entre archivos y hojas.
+
+PENDIENTE: Completar el relevamiento de relaciones y dependencias contra las planillas reales.
