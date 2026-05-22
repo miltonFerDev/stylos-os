@@ -10,11 +10,14 @@ Plantillas reutilizables para documentos recurrentes del negocio: cierres diario
 
 | Plantilla | Uso | Estado |
 |-----------|-----|--------|
-| Cierre diario | PENDIENTE | PENDIENTE |
+| Registro diario físico | Control de caja, respaldo operativo, base para cierre WhatsApp | **Nuevo — Sprint 3** |
+| Cierre diario WhatsApp | Mensaje de cierre diario a administración | **Nuevo — Sprint 3** |
+| Registro de decisión | Documentar decisiones con contexto, opciones y resultado | **Nuevo — Sprint 3** |
+| Registro de consulta | Documentar consultas importantes con respuesta y verificación | **Nuevo — Sprint 3** |
+| Registro de aprendizaje | Documentar lecciones aprendidas validadas | **Nuevo — Sprint 3** |
+| Acta de reunión | Documentar reuniones con acuerdos y compromisos | **Nuevo — Sprint 3** |
 | Evaluación de sponsor | PENDIENTE | PENDIENTE |
 | Evaluación de promoción | PENDIENTE | PENDIENTE |
-| Registro de decisión | PENDIENTE | PENDIENTE |
-| Acta de reunión | PENDIENTE | PENDIENTE |
 | Informe semanal | PENDIENTE | PENDIENTE |
 | Informe mensual | PENDIENTE | PENDIENTE |
 

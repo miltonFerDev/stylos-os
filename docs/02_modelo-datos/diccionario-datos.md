@@ -19,10 +19,10 @@ Estado posible: `documentado` / `pendiente` / `pendiente de verificación`
 | Fecha | Fecha (dd/mm/aaaa) | Sí | Fecha del día registrado | 2/1/2025 | Formato uniforme; no permitir fechas futuras | Documentado |
 | Periodo | Texto (AAAA-MM) | Sí | Mes contable al que pertenece el día | 2025-01 | Debe coincidir con el año-mes de Fecha | Documentado |
 | Efectivo | Numérico (monetario) | Sí | Ingresos en efectivo del día | 126000 | No negativo; consistencia con arqueo de caja | Documentado |
-| MPD | Numérico (monetario) | No | Ingresos por Mercado Pago débito / cuotas | 17000 | No negativo; puede estar vacío si no hubo | Documentado |
-| MPM | Numérico (monetario) | No | Ingresos por Mercado Pago mercado (QR, monedero, link de pago) | 72500 | No negativo; parece dejar de usarse ~julio 2025 | Documentado |
-| Tarjetas | Numérico (monetario) | No | Ingresos por tarjetas de crédito / débito (no MP) | 40000 | No negativo; puede estar vacío | Documentado |
-| Total Barbería | Numérico (monetario) | Sí | Suma total del día. **Posible campo calculado** (Efectivo + MPD + MPM + Tarjetas) | 255500 | Debe coincidir con la suma de los medios de pago | Documentado |
+| MPD | Numérico (monetario) | No | Ingresos por Mercado Pago débito / cuotas. Confirmado: vacío = $0. | 17000 | No negativo; vacío = $0 | Documentado |
+| MPM | Numérico (monetario) | No | Ingresos por Mercado Pago mercado (QR, monedero, link de pago). Confirmado: vacío = $0. | 72500 | No negativo; vacío = $0; dejó de usarse ~julio 2025 | Documentado |
+| Tarjetas | Numérico (monetario) | No | Ingresos por tarjetas de crédito / débito (no MP). Confirmado: vacío = $0. | 40000 | No negativo; vacío = $0 | Documentado |
+| Total Barbería | Numérico (monetario) | Sí | Suma total del día. **Campo calculado** (SUM de Efectivo + MPD + MPM + Tarjetas). Confirmado por usuario. | 255500 | Debe coincidir con la suma de los medios de pago | Documentado |
 
 ---
 
@@ -62,6 +62,12 @@ Estado posible: `documentado` / `pendiente` / `pendiente de verificación`
 | MPD | Numérico (monetario) | No | Porción cobrada por Mercado Pago débito | 14400 | No negativo; puede estar vacío | Documentado |
 | MPM | Numérico (monetario) | No | Porción cobrada por Mercado Pago mercado | 26400 | No negativo; puede estar vacío | Documentado |
 | Total Abonado | Numérico (monetario) | No | Suma cobrada. **Posible campo calculado** (Efectivo + MPD + MPM) | 46400 | Debe coincidir con la suma de los medios cobrados | Documentado |
+
+**Observaciones — Comisiones**
+
+| Observación | Detalle | Confirmado |
+|-------------|---------|------------|
+| PersonaID=7 con Servicios=0 | Representa barbero en licencia médica con pago de comisión de igual manera | Sí |
 
 ---
 

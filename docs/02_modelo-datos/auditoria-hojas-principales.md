@@ -58,9 +58,9 @@ Registra el movimiento diario de la barbería desglosado por medio de cobro (Efe
 
 | # | Validación | Estado actual | Hipótesis |
 |---|-----------|---------------|-----------|
-| 1 | La suma de Efectivo + MPD + MPM + Tarjetas debe coincidir con Total Barbería | No está documentada todavía la fórmula o regla de validación que confirma que la suma de medios coincida con Total Barbería | Hipótesis a confirmar |
-| 2 | Días con Total = $0 | Se observaron 3 días con Total = $0 (2/4/2025, 24/6/2025, 9/7/2025) | Hipótesis a confirmar: pueden ser días no trabajados o carga omitida |
-| 3 | Celdas vacías vs $0 en medios de pago | Se detectaron 29 filas con celdas vacías en MPD, MPM o Tarjetas | Hipótesis a confirmar: una celda vacía puede significar $0 o carga omitida |
+| 1 | La suma de Efectivo + MPD + MPM + Tarjetas debe coincidir con Total Barbería | **Confirmado**: Total Barbería es SUM automático de las columnas. | Confirmada |
+| 2 | Días con Total = $0 | Se observaron 3 días con Total = $0 (2/4/2025, 24/6/2025, 9/7/2025) | **Pendiente de confirmar**: pueden ser días no trabajados o errores de carga |
+| 3 | Celdas vacías vs $0 en medios de pago | **Confirmado**: vacío = $0. | Confirmada |
 | 4 | Consistencia de formato monetario | Cambio de prefijo `$` a sin prefijo ~enero 2026 | Observación preliminar — no constituye error por sí solo |
 
 ### 6. Riesgos de carga manual
@@ -167,7 +167,7 @@ Registra comisiones de los barbijos por servicio realizado, con desglose de vent
 |---|-----------|---------------|-----------|
 | 1 | Todo registro debe tener ComisionID | Se observó que en los registros tempranaanalizados, ComisionID estaba vacío | Hipótesis a confirmar: el alto porcentaje de vacíos es una estimación basada en el CSV analizado |
 | 2 | Todo registro debe tener PersonaID | Se observó un alto porcentaje de campos vacíos en los registros tempranaanalizados | Hipótesis a confirmar: misma situación |
-| 3 | Servicios = 0 con PersonaID=7 recurrente | Se detectaron múltiples registros con PersonaID=7, Servicios=0 y Comisión fija ($43.000 o $64.500) | Hipótesis a confirmar: PersonaID=7 aparece asociado a registros con Servicios=0 y Comisión fija. Podría representar un pago fijo, ajuste, retiro u otro concepto no estrictamente comisional |
+| 3 | Servicios = 0 con PersonaID=7 recurrente | **Confirmado**: PersonaID=7 corresponde a barbero en licencia médica con pago de comisión de igual manera. | Confirmada |
 | 4 | Suma de abonos (Efectivo + MPD + MPM) debe coincidir con Total_Abonado | No se identificó validación visible | Hipótesis a confirmar |
 | 5 | Total_Ventas y Total_Abonado son consistentes entre sí | No se identificó validación visible | Hipótesis a confirmar |
 

@@ -34,8 +34,8 @@ Validaciones fuera de alcance por ahora:
 | V-CD-04 | MPD | Numérico o vacío con significado definido | obligatoria | media | Confirmar si vacío = 0 o carga omitida | pendiente de confirmación |
 | V-CD-05 | MPM | Numérico o vacío con significado definido | obligatoria | media | Confirmar si vacío = 0 o carga omitida; verificar si dejó de usarse ~jul 2025 | pendiente de confirmación |
 | V-CD-06 | Tarjetas | Numérico o vacío con significado definido | obligatoria | media | Confirmar si vacío = 0 o carga omitida | pendiente de confirmación |
-| V-CD-07 | Celdas vacías en medios de pago | Definir si vacío equivale a 0 o a carga omitida | consistencia | alta | Confirmar regla de negocio con usuario | pendiente de confirmación |
-| V-CD-08 | Total Barbería | Debe coincidir con la suma de Efectivo + MPD + MPM + Tarjetas, si esa es la fórmula confirmada | cálculo | alta | Confirmar fórmula real en Sheets | pendiente de confirmación |
+| V-CD-07 | Celdas vacías en medios de pago | Definido: vacío equivale a $0 | consistencia | alta | Confirmado por usuario | **Confirmada** |
+| V-CD-08 | Total Barbería | Debe coincidir con la suma de Efectivo + MPD + MPM + Tarjetas. **Confirmado**: es SUM automático. | cálculo | alta | Confirmado por usuario | **Confirmada** |
 | V-CD-09 | Total Barbería = 0 | Alertar cuando Total = $0 para verificar si es día no trabajado vs error de carga | alerta | media | Revisar días con Total = 0 en CSV (filas 65, 122, 133) | propuesta |
 | V-CD-10 | Fecha duplicada | No debe haber dos registros con la misma Fecha | consistencia | alta | Buscar duplicados por Fecha | propuesta |
 
@@ -74,7 +74,7 @@ Validaciones fuera de alcance por ahora:
 | V-CO-08 | Total_Ventas | Posible campo calculado; pendiente confirmar fórmula (¿Servicios + Productos?) | cálculo | media | Verificar fórmula real en Sheets | pendiente de confirmación |
 | V-CO-09 | Total_Abonado | Posible campo calculado; pendiente confirmar fórmula (¿Efectivo + MPD + MPM?) | cálculo | media | Verificar fórmula real en Sheets | pendiente de confirmación |
 | V-CO-10 | Efectivo, MPD, MPM | Numéricos o vacío con significado definido | obligatoria | media | Confirmar si vacío = 0 o no cargado | pendiente de confirmación |
-| V-CO-11 | Servicios = 0 y Comisión > 0 | Alerta (no error automático): verificar si corresponde a pago fijo, ajuste, retiro u otro concepto no estrictamente comisional | alerta | media | Revisar PersonaID=7 con Servicios=0 y Comisión fija ($43.000/$64.500) | pendiente de confirmación |
+| V-CO-11 | Servicios = 0 y Comisión > 0 | Alerta (no error automático): PersonaID=7 con Servicios=0 y Comisión > 0 corresponde a barbero en licencia médica con pago de comisión de igual manera. | alerta | media | **Confirmado** por usuario | **Confirmada** |
 
 ---
 
@@ -149,7 +149,7 @@ Las siguientes validaciones se identifican como potencialmente útiles pero requ
 | Nivel | Descripción | Validaciones incluidas |
 |-------|-------------|------------------------|
 | **P1** | Verificable sin dependencias externas | V-CD-01, V-CD-02, V-CD-03, V-CD-09, V-CD-10, V-EG-01, V-EG-02, V-EG-03, V-EG-04, V-EG-05, V-CO-02, V-CO-03, V-CO-05, V-CO-07 |
-| **P2** | Requiere confirmar hipótesis con usuario | V-CD-07, V-CD-08, V-EG-09, V-EG-10, V-CO-01, V-CO-06, V-CO-10, V-CO-11 |
+| **P2** | Confirmadas con usuario | V-CD-07, V-CD-08, V-CO-11 |
 | **P3** | Requiere relevar hojas diccionario | V-EG-06, V-EG-07, V-EG-08, V-CO-04, V-CR-02, V-CR-03, V-CR-04 |
 | **P4** | Requiere fórmulas documentadas en Sheets | V-CO-08, V-CO-09 |
 
@@ -159,14 +159,17 @@ Las validaciones cruzadas (V-CR-01 a V-CR-05) no tienen nivel asignado porque de
 
 ## Qué debe confirmarse antes de programar scripts
 
-1. **Fórmula de Total Barbería** — ¿Es un `SUM` automático de Efectivo + MPD + MPM + Tarjetas o es un valor cargado manualmente?
-2. **Fórmulas de Total_Ventas y Total_Abonado** — ¿De dónde se calculan? ¿De dónde sale el valor?
-3. **Significado de celdas vacías en medios de pago** — ¿Empty significa $0 o significa que no se cargó el dato?
-4. **Cuándo es obligatorio PersonaID en Egresos** — ¿Para todo egreso, solo para gastos personales, o queda a criterio del que carga?
-5. **Cuándo es obligatorio MedioPagoID en Egresos** — ¿Para todo egreso o solo en ciertos casos?
-6. **Contenido de las hojas diccionario** — Personas, Categorías, Subcategorías, Medios de pago (estructura y datos)
-7. **Significado de PersonaID=7 con Servicios=0 y Comisión fija** — ¿Es un pago fijo, retiro, ajuste u otro concepto?
-8. **Relación entre Egresos en efectivo y el campo Efectivo de Caja_diaria** — ¿Se descuenta automáticamente o son flujos independientes?
+| Item | Estado |
+|------|--------|
+| Fórmula de Total Barbería | **Confirmado**: SUM automático de Efectivo + MPD + MPM + Tarjetas |
+| Significado de celdas vacías en medios de pago | **Confirmado**: vacío = $0 |
+| Significado de PersonaID=7 con Servicios=0 | **Confirmado**: barbero en licencia médica con pago de comisión |
+| Días con Total=$0 | **Pendiente de confirmar**: pueden ser días no trabajados o errores de carga |
+| Fórmulas de Total_Ventas y Total_Abonado | Pendiente |
+| Cuándo es obligatorio PersonaID en Egresos | Pendiente |
+| Cuándo es obligatorio MedioPagoID en Egresos | Pendiente |
+| Contenido de las hojas diccionario (Personas, Categorías, Subcategorías, Medios de pago) | Pendiente |
+| Relación entre Egresos en efectivo y el campo Efectivo de Caja_diaria | Pendiente |
 
 ---
 
