@@ -6,6 +6,28 @@ Registrar los cambios relevantes del proyecto Stylos OS. No es un log de commits
 
 ---
 
+## 2026-05-23
+
+### Sprint 4 — Método de consulta gerencial
+
+**Decisión de diseño:**
+- Consultas libres en lugar de lista cerrada — El usuario plantea la pregunta en lenguaje natural. No se impose menú ni opciones predefinidas.
+- Áreas con clasificación orientativa — Cada consulta puede tener área principal y áreas secundarias (ej: consulta sobre sponsor puede involucrar marketing, inversión, caja y signos vitales).
+- Cruces en tres niveles — Posibles hoy / parcialmente disponibles / deseados a futuro. No se limita el método a lo que ya está perfectamente disponible.
+- Cuatro niveles de confianza — Confirmado, probable, estimado, no disponible. Con definiciones exactas.
+- Registro selectivo — Solo se registra cuando afecta decisión relevante, puede repetirse, genera aprendizaje, evidencia duda recurrente, o impacta áreas clave.
+- Regla central mantenida — La consulta parte del usuario. No se crean scripts, no se automatiza, no se modifica Sheets, no se propone PostgreSQL.
+
+**Documentación creada:**
+
+- Método de consulta gerencial (`docs/03_procesos/metodo-consulta-gerencial.md`): 8 secciones que cubren el flujo completo desde la consulta libre hasta la conversión en decisión o aprendizaje. Incluye tabla de 10 áreas con definición, mapeo de fuentes de datos por área, lista de cruces posibles en 3 niveles, guía para detectar datos faltantes, escala de confianza en 4 niveles, criterio de registro selectivo, y guía para convertir consultas en decisiones/aprendizajes.
+
+**Documentación actualizada:**
+
+- `docs/03_procesos/README.md`: Índice y descripción del proceso de consulta gerencial.
+
+---
+
 ## 2026-05-22
 
 ### Sprint 2 — Completado

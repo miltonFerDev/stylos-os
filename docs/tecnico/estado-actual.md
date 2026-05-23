@@ -2,86 +2,71 @@
 
 ## 1. Fecha de cierre de sesión
 
-2026-05-22
+2026-05-23
 
 ## 2. Sprint actual
 
-**Sprint 3 — Registro diario físico y cierre diario WhatsApp**
+**Sprint 4 — Método de consulta gerencial**
 
 ---
 
-## 3. Qué se completó en el Sprint 3
+## 3. Qué se completó en el Sprint 4
 
-### Pre-fase: Hipótesis confirmadas del Sprint 2
+### Método de consulta gerencial
 
-- **Total Barbería = SUM automático** — Confirmado por usuario
-- **Celdas vacías en MPD/MPM/Tarjetas = $0** — Confirmado por usuario
-- **PersonaID=7 con Servicios=0 = Licencia médica con pago de comisión** — Confirmado por usuario
-- **Días con Total=$0** — Queda pendiente de confirmación
+- **Documento de método de consulta gerencial** (`docs/03_procesos/metodo-consulta-gerencial.md`): 8 secciones que cubren el flujo completo desde la consulta libre hasta la conversión en decisión o aprendizaje. Incluye:
+  - Recibir consulta libre: principio de que el usuario formula sin menú predefinido.
+  - Clasificar por área: tabla de 10 áreas con definición, clasificación orientativa con área principal y secundarias (ejemplo incluido aclarado como ilustrativo).
+  - Identificar fuentes de datos: mapeo área → fuentes, referencias a estructura-sheets y diccionario-datos, lista de fuentes pendientes.
+  - Cruces posibles en 3 niveles: hoy (verificados), parcialmente (disponibles con limitaciones), deseados a futuro (requieren datos no relevados).
+  - Datos faltantes: cómo detectar qué falta, pasos ante limitaciones, lista de hojas con TODO.
+  - Nivel de confianza: escala de 4 niveles (confirmado, probable, estimado, no disponible) con definición exacta y guía de comunicación.
+  - Registro selectivo: criterio de cuándo registrar (decisión relevante, repetición, aprendizaje, duda recurrente, impacto en áreas clave) y cuándo descartar.
+  - Convertir en decisión o aprendizaje: criterio para derivar consultas a memoria institucional.
+  - Sección "Qué NO hace este método" con reglas explícitas.
 
-Documentos actualizados: `diccionario-datos.md`, `auditoria-hojas-principales.md`, `plan-validaciones-sheets.md`, `pendientes-sheets.md`.
+- **Regla central**: La consulta parte del usuario. Sin lista cerrada, sin scripts, sin automatización, sin modificar Sheets, sin proponer PostgreSQL.
 
-### Documentación del flujo de cierre diario
+### Documentos actualizados
 
-- **Proceso de cierre diario** (`docs/03_procesos/cierre-diario.md`): Flujo actual documentado, problemas identificados, flujo propuesto mejorado, reglas de transición, qué no se implementa todavía.
-- **Template de registro diario físico** (`docs/05_templates/registro-diario-fisico.md`): Formato A4 apaisado para papel/PDF, columns, valores válidos, ejemplos, instrucciones.
-- **Template de cierre WhatsApp** (`docs/05_templates/cierre-diario-whatsapp.md`): Formato estándar, secciones obligatorias, reglas de formato, ejemplos completos.
-
-### Templates de memoria institucional
-
-- `registro-decision.md`
-- `registro-consulta.md`
-- `registro-aprendizaje.md`
-- `acta-reunion.md`
-
-### Documentos técnicos actualizados
-
-- `docs/03_procesos/README.md` — Actualizado con cierre diario
-- `docs/05_templates/README.md` — Actualizado con 7 plantillas nuevas
+- `docs/03_procesos/README.md`: Índice y descripción del proceso de consulta gerencial agregado.
 
 ---
 
-## 4. Archivos creados o modificados en Sprint 3
+## 4. Archivos creados o modificados en Sprint 4
 
 | Archivo | Acción | Fecha |
 |---------|--------|-------|
-| `docs/03_procesos/cierre-diario.md` | Creado | 2026-05-22 |
-| `docs/05_templates/registro-diario-fisico.md` | Creado | 2026-05-22 |
-| `docs/05_templates/cierre-diario-whatsapp.md` | Creado | 2026-05-22 |
-| `docs/05_templates/registro-decision.md` | Creado | 2026-05-22 |
-| `docs/05_templates/registro-consulta.md` | Creado | 2026-05-22 |
-| `docs/05_templates/registro-aprendizaje.md` | Creado | 2026-05-22 |
-| `docs/05_templates/acta-reunion.md` | Creado | 2026-05-22 |
-| `docs/02_modelo-datos/diccionario-datos.md` | Actualizado (hipótesis confirmadas) | 2026-05-22 |
-| `docs/02_modelo-datos/auditoria-hojas-principales.md` | Actualizado (hipótesis confirmadas) | 2026-05-22 |
-| `docs/02_modelo-datos/plan-validaciones-sheets.md` | Actualizado (hipótesis confirmadas) | 2026-05-22 |
-| `docs/02_modelo-datos/pendientes-sheets.md` | Actualizado | 2026-05-22 |
-| `docs/03_procesos/README.md` | Actualizado | 2026-05-22 |
-| `docs/05_templates/README.md` | Actualizado | 2026-05-22 |
+| `docs/03_procesos/metodo-consulta-gerencial.md` | Creado | 2026-05-23 |
+| `docs/03_procesos/README.md` | Actualizado (índice y descripción) | 2026-05-23 |
+| `docs/tecnico/changelog.md` | Actualizado (entrada Sprint 4) | 2026-05-23 |
+| `docs/tecnico/estado-actual.md` | Actualizado (cierre Sprint 4) | 2026-05-23 |
 
 ---
 
-## 5. Decisiones tomadas en Sprint 3
+## 5. Decisiones tomadas en Sprint 4
 
-- **Template físico en A4 apaisado**: Formato horizontal para permitir más columnas sin perder legibilidad.
-- **No incluir campos contables complejos**: El formato no usa "Debe/Haber" visible. Usa Ingreso/Salida que es más intuitivo para operación.
-- **Transferencia como observación**: El modelo actual de Sheets no tiene columna Transferencia. Se documenta como observación para evaluación futura, sin modificar Sheets.
-- **Templates de memoria liviana**: Los 4 templates de memoria institucional se crearon como base documental, sin desplazar el foco del sprint.
+- **Consulta libre sin lista cerrada**: El usuario formula en lenguaje natural. No se presenta menú ni opciones predefinidas. Los ejemplos se marcan explícitamente como ilustrativos, no como menú.
+- **Áreas con clasificación orientativa**: Cada consulta puede tener área principal y áreas secundarias. Una consulta sobre sponsor puede involucrar marketing, inversión, caja y signos vitales simultáneamente.
+- **Cruces en tres niveles**: Se documentan cruces posibles hoy (verificados), parcialmente disponibles, y deseados a futuro. No se limita el método a lo que ya está perfectamente disponible.
+- **Nivel de confianza explícito**: Toda respuesta incluye su nivel (confirmado, probable, estimado, no disponible). No se infla la confianza. La honestidad sobre la calidad del dato es prioritaria.
+- **Registro selectivo**: No toda consulta se registra. Solo cuando afecta decisión relevante, puede repetirse, genera aprendizaje, evidencia duda recurrente, o impacta áreas clave (finanzas, operación, marketing, equipo, estrategia).
+- **Conversión a decisión o aprendizaje**: Si la consulta produce un cambio de criterio, una acción tomada, o una lección validada, se deriva a memoria institucional.
 
 ---
 
-## 6. Qué NO se hizo en Sprint 3
+## 6. Qué NO se hizo en Sprint 4
 
+- No se creó lista cerrada de consultas objetivo
 - No se crearon scripts
-- No se automatizó WhatsApp
+- No se automatizó ninguna parte del proceso de consulta
 - No se modificó Google Sheets
 - No se propuso PostgreSQL ni otra base de datos
-- No se cambió el modelo de datos
-- No se implementó parsing automático del mensaje de cierre
+- No se condicionó al usuario a formulaciones predefinidas
 
 ---
 
-## 7. Pendientes para Sprint 4
+## 7. Pendientes para Sprint 5
 
 ### Confirmaciones pendientes del Sprint 2
 
@@ -110,7 +95,7 @@ Documentos actualizados: `diccionario-datos.md`, `auditoria-hojas-principales.md
 
 ---
 
-## 8. Discrepancia documentada
+## 8. Discrepancia documentada (Sprint 3)
 
 **Transferencia como medio de pago operativo**
 
@@ -127,12 +112,14 @@ El template de registro físico incluye Transferencia como medio de pago posible
 - **Días con Total=$0 sigue pendiente de confirmación.** No implementar validaciones basadas en ese dato hasta confirmarlo.
 - **El mensaje de cierre WhatsApp se arma manualmente.** No implementar scripts de parsing automático hasta que el formato esté en uso y validado.
 - **Fresha no se reemplaza.** El registro físico es un control de caja y respaldo operativo, no un CRM.
+- **Consulta gerencial sin menú cerrado.** No imponer listas de consultas predefinidas. Los ejemplos son ilustrativos, no opciones de un menú.
+- **Nivel de confianza explícito.** Toda respuesta a consulta debe incluir su nivel. No inflar la confianza.
 
 ---
 
 ## 10. Comandos Git pendientes
 
-Archivos listos para stage (pendientes de commit desde Sprint 2 y Sprint 3):
+Archivos listos para stage (pendientes de commit desde Sprint 2, Sprint 3 y Sprint 4):
 
 ```
 docs/02_modelo-datos/auditoria-hojas-principales.md
@@ -141,6 +128,7 @@ docs/02_modelo-datos/pendientes-sheets.md
 docs/02_modelo-datos/plan-validaciones-sheets.md
 docs/03_procesos/README.md
 docs/03_procesos/cierre-diario.md
+docs/03_procesos/metodo-consulta-gerencial.md
 docs/05_templates/README.md
 docs/05_templates/registro-diario-fisico.md
 docs/05_templates/cierre-diario-whatsapp.md
