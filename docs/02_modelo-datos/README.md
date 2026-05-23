@@ -29,6 +29,8 @@ Documentación generada durante el Sprint 2:
 | `auditoria-hojas-principales.md` | Auditoría preliminar basada en CSV de muestra: anomalías detectadas, riesgos y dudas pendientes |
 | `pendientes-sheets.md` | Checklist de información que falta relevar contra las planillas reales |
 | `plan-validaciones-sheets.md` | Plan de validaciones futuras para Caja_diaria, Egresos y Comisiones, con priorización y dependencias |
+| `fuentes-analisis.md` | Catálogo de fuentes de datos disponibles para análisis: Sheets, Fresha, hoja diaria. Con nivel de confiabilidad y limitaciones. |
+| `mapeo-fresha-sheets.md` | Mapeo de campos del export de Fresha contra Sheets. Toda relación es preliminar y requiere validación. |
 
 Estos documentos se completan a medida que se relevan las planillas. Los campos y hojas no verificados están marcados como `PENDIENTE` o `TODO`.
 

@@ -8,7 +8,31 @@ Registrar los cambios relevantes del proyecto Stylos OS. No es un log de commits
 
 ## 2026-05-23
 
-### Sprint 4 — Método de consulta gerencial
+### Sprint 4 — Método de consulta gerencial (continuación)
+
+**Documentación de fuentes y cruces de datos:**
+
+- Catálogo de fuentes de datos (`docs/02_modelo-datos/fuentes-analisis.md`): Documenta las fuentes disponibles para análisis (Caja_diaria, Egresos, Comisiones, Cuota parte, Presupuesto, Dashboard, Fresha CSV, Hoja diaria) con nivel de confiabilidad (Alto/Medio/Parcial), limitaciones, frecuencia esperada y estado (Disponible/Parcial/Futuro). Incluye resumen tabular y sección "Qué NO son estas fuentes".
+
+- Mapeo Fresha ↔ Sheets (`docs/02_modelo-datos/mapeo-fresha-sheets.md`): Mapeo de campos del export `report_sales-log-detail` de Fresha contra las hojas de Sheets. Campos cruzados: Fecha/Hora, Miembro del equipo, Ventas/Total, Canal, Cliente. Cruces posibles documentados (ingresos diarios, actividad de barbero, servicios) y limitaciones (sin clave común, sin desglose por medio de pago, sin cliente en Sheets). Toda relación inferida marcada como preliminar.
+
+- Cruza de datos manual (`docs/03_procesos/cruza-datos-inicial.md`): Proceso de análisis cruzado manual entre Sheets y Fresha. Flujo de 6 pasos (definir objetivo, identificar fuentes, exportar, resumir, comparar, documentar). Cruces con prioridad hoy: ingresos diarios Fresha vs Caja_diaria, actividad de barbero Fresha vs Comisiones, resultado operativo, descuentos como análisis comercial. Cruces para después: occupancy rate, clientela nueva vs recurrente, ROI por promoción, proyección de caja. Formato de documento de análisis cruzado incluido.
+
+**Prompts para análisis con IA:**
+
+- Prompt consulta libre (`docs/04_prompts/prompt-consulta-libre.md`): Prompt reutilizable para recibir una pregunta libre del usuario. Estructura de 8 pasos: clasificar por área (principal + secundarias), identificar fuentes necesarias, datos disponibles, datos faltantes, análisis posible con nivel de confianza, respuesta general, recomendación condicionada, criterio de registro. Formato de respuesta estructurado con todos los niveles.
+
+- Prompt análisis cruzado (`docs/04_prompts/prompt-analisis-cruzado.md`): Prompt reutilizable para analizar datos resumidos de varias fuentes. Estructura de 7 secciones: resumen ejecutivo, hallazgos principales, análisis cruzado (Fresha vs Sheets, actividad de equipo, resultado operativo, canales y clientes), riesgos detectados, señales tempranas, dudas y limitaciones, próximos pasos. Formato de salida completo con niveles de confianza.
+
+**Documentación actualizada:**
+
+- `docs/02_modelo-datos/README.md`: Agregados `fuentes-analisis.md` y `mapeo-fresha-sheets.md` al índice.
+- `docs/03_procesos/README.md`: Agregado proceso de Cruza de datos al índice y descripción.
+- `docs/04_prompts/README.md`: Agregados los dos prompts nuevos (consulta libre y análisis cruzado) al índice.
+
+---
+
+### Sprint 4 — Método de consulta gerencial (inicio)
 
 **Decisión de diseño:**
 - Consultas libres en lugar de lista cerrada — El usuario plantea la pregunta en lenguaje natural. No se impose menú ni opciones predefinidas.

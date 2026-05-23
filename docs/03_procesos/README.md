@@ -12,6 +12,7 @@ Documentar los procesos operativos del negocio: cómo se hacen las cosas hoy, qu
 |---------|-----------|--------|
 | Cierre diario | `cierre-diario.md` | **Nuevo — Sprint 3** |
 | Consulta gerencial | `metodo-consulta-gerencial.md` | **Nuevo — Sprint 4** |
+| Cruza de datos | `cruza-datos-inicial.md` | **Nuevo — Sprint 4** |
 | Carga de ingresos | PENDIENTE | PENDIENTE |
 | Registro de egresos | PENDIENTE | PENDIENTE |
 | Pago de comisiones | PENDIENTE | PENDIENTE |
@@ -31,6 +32,7 @@ Documentar los procesos operativos del negocio: cómo se hacen las cosas hoy, qu
 
 - **Cierre diario** (`cierre-diario.md`): Flujo actual, problemas, flujo propuesto mejorado, reglas de transición, qué no se implementa todavía.
 - **Consulta gerencial** (`metodo-consulta-gerencial.md`): Método para responder consultas libres de gestión sin lista cerrada de preguntas. Ocho secciones: recibir consulta libre, clasificar por área (con áreas principales y secundarias), identificar fuentes de datos, cruces posibles (hoy / parcialmente / deseados a futuro), datos faltantes, nivel de confianza, cuándo registrar, cómo convertir en decisión o aprendizaje.
+- **Cruza de datos** (`cruza-datos-inicial.md`): Proceso manual de análisis cruzado entre Sheets y Fresha. Describe flujo de exportación, resumen de fuentes, cruces con prioridad hoy, cruces para después, y formato de documento de análisis.
 
 ## Procesos pendientes de documentación
 

@@ -10,6 +10,8 @@ Almacenar y versionar los prompts usados para análisis con IA. Cada prompt debe
 
 | Nombre | Objetivo | Estado |
 |--------|----------|--------|
+| Consulta libre | Recibir una pregunta libre del usuario, clasificarla por área, identificar fuentes y datos, responder con nivel de confianza y recomendar si corresponde | **Nuevo — Sprint 4** |
+| Análisis cruzado | Analizar datos resumidos de varias fuentes, generar hallazgos, riesgos, señales tempranas y próximos pasos | **Nuevo — Sprint 4** |
 | Análisis semanal | PENDIENTE | PENDIENTE |
 | Evaluación de sponsor | PENDIENTE | PENDIENTE |
 | Evaluación de promoción | PENDIENTE | PENDIENTE |
